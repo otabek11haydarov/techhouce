@@ -70,7 +70,7 @@ if (dropdown) {
             alert("You have been logged out");
             window.location.href = "index.html";
         } else {
-            window.location.href = value;
+            window.location.href = "index.html";
         }
     });
 };
