@@ -1,0 +1,144 @@
+/* Products page */
+
+
+.products-page {
+    display: flex;
+    gap: 20px;
+    padding: 16px;
+    background: #e5e5e5;
+}
+
+.filter-toggle {
+    position: fixed;
+    top: 140px;
+    right: 16px;
+    z-index: 20;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: #fff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.filters {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 280px;
+    height: 100vh;
+    background: #fff;
+    z-index: 30;
+    padding: 16px;
+    transition: left 0.3s ease;
+    border-right: 1px solid #ddd;
+}
+
+.filters.active {
+    left: 0;
+}
+
+.filters-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.close-filter {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.filter-box {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 14px;
+}
+
+.filter-box h4 {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.filter-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.filter-box li {
+    padding: 6px 8px;
+    font-size: 13px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.filter-box li.active {
+    background: #dbe8ff;
+}
+
+.filter-box select {
+    width: 100%;
+    padding: 6px;
+    border-radius: 6px;
+}
+
+.products {
+    flex: 1;
+}
+
+/* Responsiveness */
+
+/* Tablet */
+
+@media (min-width: 768px) {
+    .filter-toggle {
+        display: none;
+    }
+
+    .filters {
+        position: static;
+        width: 240px;
+        height: auto;
+        left: 0;
+        border-radius: 12px;
+    }
+
+    .products-page {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+    }
+}
+
+/* Desktop */
+
+@media (min-width: 1200px) {
+    .filters {
+        width: 280px;
+        padding: 20px;
+    }
+
+    .products-page {
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 32px;
+    }
+}
+
+/* Large screen */
+
+@media (min-width: 100px) {
+    .filters {
+        width: 320px;
+        padding: 24px;
+    }
+
+    .products-page {
+        max-width: 1500px;
+        gap: 40px;
+    }
+}

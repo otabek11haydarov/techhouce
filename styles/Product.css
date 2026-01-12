@@ -1,0 +1,177 @@
+/* Product page */
+
+.product-detail {
+    max-width: 100%;
+    margin: 2rem 0;
+}
+
+
+.product-category {
+    display: inline-block;
+    background: #ddd;
+    padding: 6px 12px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    font-size: 13px;
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 16px;
+}
+
+.product-image {
+    position: relative;
+    background: #f7f7f7;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+}
+
+.product-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.save-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: red;
+    color: #fff;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 12px;
+}
+
+.product-info {
+    margin-top: 20px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+}
+
+.brand img {
+    width: 60px;
+}
+
+.product-title {
+    font-size: 20px;
+    margin: 8px 0;
+}
+
+.rating {
+    font-size: 13px;
+    color: #f1c40f;
+}
+
+.rating span {
+    color: #555;
+    margin-left: 6px;
+}
+
+.price {
+    margin: 12px 0;
+}
+
+.price strong {
+    font-size: 22px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #777;
+    margin-left: 8px;
+}
+
+.stock {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.in-stock {
+    background: #2ecc71;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+.qty {
+    font-size: 13px;
+}
+
+.description h4 {
+    margin-bottom: 6px;
+}
+
+.description p {
+    font-size: 13px;
+    color: #555;
+}
+
+.warranty {
+    background: #e8f1ff;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    margin: 14px 0;
+}
+
+.add-btn {
+    width: 100%;
+    padding: 14px;
+    background: #0d47ff;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Responsiveness */
+
+/* Tablet */
+
+@media (min-width: 768px) {
+    .product-card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        max-width: 900px;
+        margin: auto;
+    }
+
+    .product-info {
+        margin-top: 0;
+    }
+}
+
+/* Desktop */
+
+@media (min-width: 1200px) {
+    .product-card {
+        grid-template-columns: 1fr 1.2fr;
+        gap: 40px;
+        max-width: 1100px;
+    }
+}
+
+/* Large screen */
+
+@media (min-width: 1500px) {
+    .product-card {
+        grid-template-columns: 1fr 1.4fr;
+        gap: 56px;
+        max-width: 1400px;
+    }
+
+    
+}

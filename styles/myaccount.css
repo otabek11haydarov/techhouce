@@ -1,0 +1,256 @@
+/* My account */
+
+.account-page {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.user-box {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.user-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-name {
+    margin-top: 0.5rem;
+    font-weight: 600;
+}
+
+.account-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.account-menu li {
+    padding: 0.7rem;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.account-menu li.active,
+.account-menu li:hover {
+    background: #e0e0e0;
+    font-weight: 600;
+}
+
+.account-dropdown {
+    width: 100%;
+    padding: 0.6rem;
+    border-radius: 6px;
+}
+
+.account-content h2 {
+    margin-bottom: 1rem;
+}
+
+.account-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.account-form input {
+    padding: 0.6rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.account-form small {
+    font-size: 0.75rem;
+    color: #666;
+}
+
+.save-btn {
+    margin-top: 1rem;
+    background: #111;
+    color: #fff;
+    border: none;
+    padding: 0.7rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.desktop-menu {
+    display: none;
+}
+
+.desktop-menu {
+    display: none;
+}
+
+/* Pop up Massege */
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.popup-box {
+    background: #fff;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 300px;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.popup-box p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.popup-btn {
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 999px;
+    background: #0a8f08;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Address section */
+
+.address-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+}
+
+.address-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    background: #fff;
+}
+
+.address-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.6rem;
+}
+
+.address-header h4 {
+    font-size: 0.95rem;
+}
+
+.edit-btn {
+    background: none;
+    border: none;
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: #555;
+}
+
+.address-name {
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+
+.address-card p {
+    font-size: 0.85rem;
+    margin-bottom: 0.2rem;
+}
+
+/* Orders section */
+
+.orders-table {
+    margin-top: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.orders-header,
+.orders-row {
+    display: grid;
+    grid-template-columns: 1.2fr 1.5fr 1fr 1fr;
+    padding: 0.8rem 1rem;
+    font-size: 0.85rem;
+}
+
+.orders-header {
+    background: #f3f3f3;
+    font-weight: 600;
+}
+
+.orders-row {
+    border-top: 1px solid #eee;
+}
+
+.status.delivered {
+    color: #0a8f08;
+    font-weight: 600;
+}
+
+.order-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+}
+
+.order-card p {
+    margin-bottom: 0.3rem;
+}
+
+.mobile-orders {
+    display: block;
+}
+
+.desktop-orders {
+    display: none;
+}
+
+
+/* Responsive */
+
+/* Tablet */
+
+/* DesktopP */
+@media (min-width: 768px) {
+    .account-layout {
+        grid-template-columns: 260px 1fr;
+        align-items: start;
+    }
+
+    .desktop-menu {
+        display: block;
+        background-color: #ccc;
+    }
+
+    .mobile-menu {
+        display: none;
+    }
+
+    /* Orders section */
+
+    .desktop-orders {
+        display: block;
+    }
+
+    .mobile-orders {
+        display: none;
+    }
+}
