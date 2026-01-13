@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-// TYext of footer write email section show on contact us placeholder
+// Text of footer write email section show on contact us placeholder
 
 document.addEventListener("DOMContentLoaded", function () {
     const textarea = document.getElementById("contact-placeholder");
