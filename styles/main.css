@@ -29,7 +29,8 @@ body {
     color: white;
     padding: 0.5rem 0.7rem;
     text-align: center;
-    height: 7rem;
+    height: 3rem;
+    margin-bottom: 0.1rem;
 }
 
 .blacktop-phone_number span {
@@ -102,11 +103,13 @@ body {
     gap: 1rem;
     padding: 1rem;
     background: #fff;
+    margin-top: 0.1rem;
 }
 
 .brand-link {
     grid-area: brand;
     display: flex;
+    align-items: center;
     gap: 0.5rem;
     text-decoration: none;
     color: #000;
@@ -184,6 +187,7 @@ body {
     display: none;
     background-color: #fff;
     padding: 0.7rem;
+    margin-top: 0.2rem !important;
 }
 
 .nav-items {
@@ -250,7 +254,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    min-height: 320px;
+    min-height: 280px;
     transition: all 0.5s ease-in;
 
 }
@@ -300,6 +304,29 @@ body {
     font-weight: 700;
     padding: 0.4rem 0.7rem;
     border-radius: 999px;
+}
+
+.product-card {
+    display: none;
+    gap: 30px;
+    padding: 30px;
+    border: 1px solid #ddd;
+    margin: 40px auto;
+    max-width: 900px;
+}
+
+
+.heart-icon {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 22px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.heart-icon.active {
+    color: red;
 }
 
 .maincard_image {
@@ -420,6 +447,67 @@ body {
     align-items: center;
     gap: 4px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* FAQs section */
+
+.faq {
+    max-width: 420px;
+    margin: 2rem auto;
+    border: 1px solid #999;
+    background: #eee;
+}
+
+.faq-title {
+    text-align: center;
+    padding: 1rem;
+    border-bottom: 1px solid #999;
+    font-size: 1.2rem;
+}
+
+.faq-item {
+    border-bottom: 1px solid #999;
+}
+
+.faq-question {
+    width: 100%;
+    background: #eee;
+    border: none;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+    cursor: pointer;
+    text-align: left;
+}
+
+.faq-question:hover {
+    background: #e0e0e0;
+}
+
+.arrow {
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    background: #f5f5f5;
+    transition: max-height 0.3s ease;
+}
+
+.faq-answer p {
+    padding: 1rem;
+    font-size: 0.85rem;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px;
+}
+
+.faq-item.active .arrow {
+    transform: rotate(180deg);
 }
 
 /* Footer section */
@@ -604,6 +692,7 @@ body {
 
 .footer-socials i {
     transition: all 0.4s ease;
+    color: #000;
 }
 
 .footer-socials i:hover {
@@ -677,6 +766,8 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        height: 5rem;
+        margin-bottom: 0.1rem;
     }
 
     .blacktop-navigation {
@@ -704,7 +795,8 @@ body {
     .container-brand {
         display: flex;
         align-items: center;
-        padding: 2rem 6rem;
+        padding: 1rem 6rem;
+        margin-top: 0.1rem;
     }
 
     .brand {
@@ -770,6 +862,27 @@ body {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    /* FAQs section */
+
+    .faq {
+        max-width: 700px;
+        margin: 3rem auto;
+    }
+
+    .faq-title {
+        font-size: 1.5rem;
+    }
+
+    .faq-question {
+        font-size: 1rem;
+        padding: 1.2rem 1.5rem;
+    }
+
+    .faq-answer p {
+        font-size: 0.95rem;
+        padding: 1.2rem 1.5rem;
+    }
+
     /* Footer section */
 
     .loyalty-item {
@@ -808,7 +921,7 @@ body {
         grid-area: brand;
     }
 
-    .footer-socials a{
+    .footer-socials a {
         color: #000;
         width: 15px;
         height: 15px;
@@ -877,9 +990,29 @@ body {
     }
 
     /* Offers section */
-
     .cards-grid {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* FAQs section */
+
+    .faq {
+        max-width: 900px;
+        margin: 4rem auto;
+    }
+
+    .faq-title {
+        font-size: 1.8rem;
+    }
+
+    .faq-question {
+        font-size: 1.05rem;
+        padding: 1.4rem 2rem;
+    }
+
+    .faq-answer p {
+        font-size: 1rem;
+        padding: 1.4rem 2rem;
     }
 
     /* Footer section */
@@ -900,6 +1033,27 @@ body {
 
     .cards-grid {
         grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* FAQs section */
+
+    .faq {
+        max-width: 1200px;
+        margin: 6rem auto;
+    }
+
+    .faq-title {
+        font-size: 2.2rem;
+    }
+
+    .faq-question {
+        font-size: 1.3rem;
+        padding: 1.8rem 2.3rem;
+    }
+
+    .faq-answer p {
+        font-size: 1.4rem;
+        padding: 1.8rem 2.4rem;
     }
 }
 

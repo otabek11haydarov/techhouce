@@ -1,3 +1,4 @@
+/* About section */
 .home-about {
     background: #ddd;
     padding: 40px 16px;
@@ -102,10 +103,79 @@
     margin-bottom: 14px;
 }
 
-/* responsiveness */
+/* Warranty section */
+
+.warranty-page {
+    background: #ddd;
+    padding: 4rem 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.warranty-card {
+    background: #f8f8f8;
+    max-width: 420px;
+    width: 100%;
+    padding: 2.5rem 1.8rem;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.warranty-title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.warranty-title span {
+    color: #0b7a2e;
+}
+
+.warranty-intro {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.warranty-block {
+    border-left: 4px solid #0b7a2e;
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.warranty-block h3 {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+.warranty-block p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #222;
+}
+
+.warranty-highlight {
+    background: linear-gradient(180deg,
+            #0a8f08,
+            #0b7a2e,
+            #075a7a);
+    color: #fff;
+    padding: 1.2rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+/* Responsiveness */
 
 /* Tablet */
 @media (min-width: 768px) {
+    /* About */
+
     .hero-title {
         font-size: 36px;
     }
@@ -121,10 +191,33 @@
     .home-cards {
         grid-template-columns: repeat(3, 1fr);
     }
+
+    /* Wattanty */
+
+    .warranty-card {
+        max-width: 720px;
+        padding: 3rem 3rem;
+    }
+
+    .warranty-title {
+        font-size: 1.9rem;
+    }
+
+    .warranty-intro {
+        font-size: 1rem;
+    }
+
+    .warranty-block p,
+    .warranty-highlight {
+        font-size: 0.95rem;
+    }
 }
 
 /* Desktop */
 @media (min-width: 1200px) {
+
+    /* About */
+
     .home-about {
         padding: 60px 20px;
     }
@@ -147,5 +240,27 @@
 
     .about-techhouse p {
         font-size: 15px;
+    }
+
+    /* Warranty */
+
+    .warranty-card {
+        max-width: 900px;
+    }
+
+    .warranty-title {
+        font-size: 2.2rem;
+    }
+}
+
+/* Large screens */
+
+@media (min-width: 1500px) {
+    .warranty-card {
+        max-width: 1200px;
+    }
+
+    .warranty-title {
+        font-size: 3rem;
     }
 }

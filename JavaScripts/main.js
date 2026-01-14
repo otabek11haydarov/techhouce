@@ -241,6 +241,51 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    const hearts = document.querySelectorAll('.heart-icon');
+
+    hearts.forEach(heart => {
+        const starsEl = heart.closest('.main-card')?.querySelector('.stars');
+        const reviewText = heart.closest('.main-card')?.querySelector('.review-text');
+
+        let isLiked = false;
+        let reviewCount = 5000;
+        let rating = 5;
+
+        function updateRating() {
+            rating = Math.min(5, Math.max(1, Math.round(reviewCount / 1000)));
+
+            if (starsEl) {
+                starsEl.textContent =
+                    '★★★★★'.slice(0, rating) + '☆☆☆☆☆'.slice(0, 5 - rating);
+
+                if (rating <= 2) starsEl.style.color = '#e74c3c';
+                else if (rating === 3) starsEl.style.color = '#f39c12';
+                else starsEl.style.color = '#f1c40f';
+            }
+
+            if (reviewText) {
+                reviewText.textContent = `${rating} (${reviewCount} reviews)`;
+            }
+        }
+
+        heart.addEventListener('click', () => {
+            isLiked = !isLiked;
+
+            heart.classList.toggle('active');
+            heart.classList.toggle('fa-solid');
+            heart.classList.toggle('fa-regular');
+
+            reviewCount += isLiked ? 1 : -1;
+            updateRating();
+        });
+
+        updateRating();
+    });
+});
+
+
+
 
 
 

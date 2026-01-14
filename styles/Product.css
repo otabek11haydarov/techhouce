@@ -67,7 +67,13 @@
 
 .rating {
     font-size: 13px;
+    display: flex;
+    align-items: center;
+}
+
+.stars {
     color: #f1c40f;
+    transition: color 0.3s ease;
 }
 
 .rating span {
@@ -173,5 +179,5 @@
         max-width: 1400px;
     }
 
-    
+
 }
