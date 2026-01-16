@@ -1,82 +1,89 @@
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const items = document.querySelectorAll('.item');
-    const subtotalEl = document.getElementById('subtotal');
-    const totalEl = document.getElementById('total');
+export function initCartPage() {
+    const container = document.getElementById("cartItems");
+    const subtotalEl = document.getElementById("subtotal");
+    const totalEl = document.getElementById("total");
     const shippingRadios = document.querySelectorAll('input[name="shipping"]');
 
-    function calculateSubtotal() {
+    if (!container) return;
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    function renderCart() {
+        container.innerHTML = "";
         let subtotal = 0;
 
-        items.forEach(item => {
-            const price = Number(item.dataset.price);
-            const count = Number(item.querySelector('.count').textContent);
-            const itemTotal = price * count;
+        if (cart.length === 0) {
+            container.innerHTML = "<p>Your cart is empty</p>";
+            subtotalEl.textContent = "$0.00";
+            totalEl.textContent = "$0.00";
+            return;
+        }
 
-            item.querySelector('.price').textContent = `$${itemTotal}`;
+        cart.forEach((item, index) => {
+            const itemTotal = item.price * item.qty;
             subtotal += itemTotal;
+
+            container.innerHTML += `
+        <div class="item" data-price="${item.price}">
+          <img src="${item.image}">
+          <div class="info">
+            <h3>${item.name}</h3>
+
+            ${item.bestSeller ? `<span class="best-seller-badge">Best Seller</span>` : ""}
+            ${item.save ? `<span class="save-cost">Save $${item.save}</span>` : ""}
+
+            <div class="qty">
+              <button class="minus" data-i="${index}">-</button>
+              <span class="count">${item.qty}</span>
+              <button class="plus" data-i="${index}">+</button>
+            </div>
+          </div>
+          <span class="price">$${itemTotal}</span>
+        </div>
+      `;
         });
 
         subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
-        return subtotal;
+        calculateTotal();
     }
 
     function calculateTotal() {
-        const subtotal = calculateSubtotal();
         let shipping = 0;
-
-        shippingRadios.forEach(radio => {
-            if (radio.checked) {
-                shipping = Number(radio.value);
-            }
+        shippingRadios.forEach(r => {
+            if (r.checked) shipping = Number(r.value);
         });
 
+        const subtotal = Number(subtotalEl.textContent.replace("$", ""));
         totalEl.textContent = `$${(subtotal + shipping).toFixed(2)}`;
     }
 
-    items.forEach(item => {
-        const minus = item.querySelector('.minus');
-        const plus = item.querySelector('.plus');
-        const countEl = item.querySelector('.count');
+    container.addEventListener("click", e => {
+        if (e.target.classList.contains("minus")) {
+            const i = e.target.dataset.i;
+            if (cart[i].qty > 1) cart[i].qty--;
+            else cart.splice(i, 1);
+        }
 
-        minus.addEventListener('click', () => {
-            let count = Number(countEl.textContent);
-            if (count > 1) {
-                count--;
-                countEl.textContent = count;
-                calculateTotal();
-            }
-        });
+        if (e.target.classList.contains("plus")) {
+            cart[e.target.dataset.i].qty++;
+        }
 
-        plus.addEventListener('click', () => {
-            let count = Number(countEl.textContent);
-            count++;
-            countEl.textContent = count;
-            calculateTotal();
-        });
+        localStorage.setItem("cart", JSON.stringify(cart));
+        renderCart();
     });
 
-    shippingRadios.forEach(radio => {
-        radio.addEventListener('change', calculateTotal);
-    });
+    shippingRadios.forEach(radio =>
+        radio.addEventListener("change", calculateTotal)
+    );
 
-    calculateTotal();
-
-
-
+    // CHECKOUT
     const checkOutBtn = document.getElementById("checkOut");
-
     if (checkOutBtn) {
-        checkOutBtn.addEventListener("click", function () {
-
-
+        checkOutBtn.addEventListener("click", () => {
             localStorage.setItem("checkoutStep", "2");
-
-
             window.location.href = "payment.html";
         });
     }
 
-});
-
+    renderCart();
+}

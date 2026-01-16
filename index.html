@@ -7,6 +7,7 @@
     <title>Tech House</title>
     <link rel="stylesheet" href="styles/Homepage.css">
     <link rel="stylesheet" href="styles/main.css">
+    <!-- <link rel="stylesheet" href="styles/test.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -28,9 +29,9 @@
                             <p class="b-nav__link">Help</p>
 
                             <div class="dropdown-items">
-                                <a href="FAQs.html" class="dropdown-item">FAQs</a>
-                                <a href="contactus.html" class="dropdown-item">Contact Us</a>
-                                <a href="warranty.html" class="dropdown-item">Warranty</a>
+                                <a href="#faqs" class="dropdown-item">FAQs</a>
+                                <a href="location.html" class="dropdown-item">Our store locations</a>
+                                <a href="about.html" class="dropdown-item">About</a>
                             </div>
                         </li>
 
@@ -183,60 +184,97 @@
             <h1 class="title_section">Featured Deals</h1>
             <p class="descriotion_section">Limited time discount offers</p>
         </div>
+
         <div class="cards-grid">
-            <div class="main-card">
-                <p class="save-cost">Save $60</p>
-                <i class="fa-regular fa-heart heart-icon" id="heart"></i>
-                <img src="images/microoven.png" alt="Microoven Image" class="maincard_image">
-                <h1 class="product-name">Shivaki SMW 2120</h1>
-                <p class="product-description">From quick snacks to full meals — ready in minutes.</p>
-                <h3 class="product-cost"><span class="old-cost">$399</span> $339</h3>
-                <div class="card-buttons">
-                    <button class="more-btn">More</button>
-                    <button class="add-btn">Add to Card</button>
-                </div>
-            </div>
 
-            <div class="main-card">
-                <p class="save-cost">Save $75</p>
-                <i class="fa-regular fa-heart heart-icon" id="heart"></i>
-                <img src="images/airconditsioner.png" alt="Air conditioners Image" class="maincard_image">
-                <h1 class="product-name">Hofmann Compact 3D</h1>
-                <p class="product-description">Your perfect climate — at the touch of a button.</p>
-                <h3 class="product-cost"><span class="old-cost">$410</span> $335</h3>
-                <div class="card-buttons">
-                    <button class="more-btn">More</button>
-                    <button class="add-btn">Add to Card</button>
-                </div>
-            </div>
+            <!-- 1 -->
+            <div class="main-card" data-id="1" data-name="LG VK76A02NTL" data-price="339" data-oldprice="389"
+                data-save="50" data-image="images/vacuum cleaner.png" data-category="Cleaning Appliance"
+                data-description="Compact power with deep cleaning." data-bestseller="false">
 
-            <div class="main-card">
                 <p class="save-cost">Save $50</p>
-                <i class="fa-regular fa-heart heart-icon" id="heart"></i>
-                <img src="images/vacuum cleaner.png" alt="Vacuum cleaenr Image" class="maincard_image">
+                <i class="fa-regular fa-heart heart-icon"></i>
+                <img src="images/vacuum cleaner.png" class="maincard_image">
                 <h1 class="product-name">LG VK76A02NTL</h1>
                 <p class="product-description">Compact power. Deep cleaning. Dust-free living.</p>
                 <h3 class="product-cost"><span class="old-cost">$389</span> $339</h3>
                 <div class="card-buttons">
                     <button class="more-btn">More</button>
-                    <button class="add-btn">Add to Card</button>
+                    <button class="add-btn">Add to Cart</button>
                 </div>
             </div>
 
-            <div class="main-card">
+            <!-- 2 -->
+            <div class="main-card" data-id="2" data-name="Shivaki SMW 2120" data-price="339" data-oldprice="399"
+                data-image="images/microoven.png" data-category="Kitchen Appliance"
+                data-description="Reliable microwave oven for quick meals and everyday cooking.">
+
                 <p class="save-cost">Save $60</p>
-                <i class="fa-regular fa-heart heart-icon" id="heart"></i>
-                <img src="images/microoven.png" alt="Microoven Image" class="maincard_image">
+                <i class="fa-regular fa-heart heart-icon"></i>
+                <img src="images/microoven.png" class="maincard_image">
                 <h1 class="product-name">Shivaki SMW 2120</h1>
                 <p class="product-description">From quick snacks to full meals — ready in minutes.</p>
                 <h3 class="product-cost"><span class="old-cost">$399</span> $339</h3>
                 <div class="card-buttons">
                     <button class="more-btn">More</button>
-                    <button class="add-btn">Add to Card</button>
+                    <button class="add-btn">Add to Cart</button>
                 </div>
             </div>
+
+            <!-- 3 -->
+            <div class="main-card" data-id="3" data-name="Hofmann Compact 3D" data-price="335" data-oldprice="410"
+                data-image="images/airconditsioner.png" data-category="Heating & Cooling"
+                data-description="Energy efficient air conditioner with fast cooling and silent operation.">
+
+                <p class="save-cost">Save $75</p>
+                <i class="fa-regular fa-heart heart-icon"></i>
+                <img src="images/airconditsioner.png" class="maincard_image">
+                <h1 class="product-name">Hofmann Compact 3D</h1>
+                <p class="product-description">Your perfect climate — at the touch of a button.</p>
+                <h3 class="product-cost"><span class="old-cost">$410</span> $335</h3>
+                <div class="card-buttons">
+                    <button class="more-btn">More</button>
+                    <button class="add-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- 4 -->
+            <div class="main-card" data-id="4" data-name="LG VK76A02NTL Plus" data-price="339" data-oldprice="389"
+                data-image="images/vacuum cleaner.png" data-category="Cleaning Appliance"
+                data-description="Advanced filtration system with strong suction power for daily cleaning.">
+
+                <p class="save-cost">Save $50</p>
+                <i class="fa-regular fa-heart heart-icon"></i>
+                <img src="images/vacuum cleaner.png" class="maincard_image">
+                <h1 class="product-name">LG VK76A02NTL</h1>
+                <p class="product-description">Compact power. Deep cleaning. Dust-free living.</p>
+                <h3 class="product-cost"><span class="old-cost">$389</span> $339</h3>
+                <div class="card-buttons">
+                    <button class="more-btn">More</button>
+                    <button class="add-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- 5 -->
+            <div class="main-card" data-id="5" data-name="Shivaki SMW 2120 Pro" data-price="339" data-oldprice="399"
+                data-image="images/microoven.png" data-category="Kitchen Appliance"
+                data-description="Modern microwave with multiple cooking modes and compact design.">
+
+                <p class="save-cost">Save $60</p>
+                <i class="fa-regular fa-heart heart-icon"></i>
+                <img src="images/microoven.png" class="maincard_image">
+                <h1 class="product-name">Shivaki SMW 2120</h1>
+                <p class="product-description">From quick snacks to full meals — ready in minutes.</p>
+                <h3 class="product-cost"><span class="old-cost">$399</span> $339</h3>
+                <div class="card-buttons">
+                    <button class="more-btn">More</button>
+                    <button class="add-btn">Add to Cart</button>
+                </div>
+            </div>
+
         </div>
     </section>
+
     <!-- /Offers section -->
 
     <!-- Bestsellers section -->
@@ -246,148 +284,129 @@
             <p class="descriotion_section">Our most popular products, trusted by customers.</p>
         </div>
         <div class="cards-grid">
-            <div class="main-card">
+
+            <!-- CARD 1 -->
+            <div class="main-card" data-id="101" data-name="Artel HD 341FN" data-price="520"
+                data-image="images/fridge.png" data-category="Kitchen Appliance"
+                data-description="Smart storage with energy efficient cooling." data-bestseller="true" data-star="4.7"
+                data-stock="120" data-brand="images/LG.png">
+
                 <span class="best-seller-badge">
                     <i class="fa-solid fa-trophy"></i>
                     Best Seller
                 </span>
-                <i class="fa-regular fa-heart heart-icon" id="heart"></i>
+
+                <i class="fa-regular fa-heart heart-icon"></i>
+
                 <img src="images/fridge.png" class="maincard_image" alt="Fridge Image">
                 <h1 class="product-name">Artel HD 341FN</h1>
-                <p class="product-description">
-                    Smart storage. Perfect fit.
-                </p>
+                <p class="product-description">Smart storage. Perfect fit.</p>
                 <h3 class="product-cost">$520</h3>
+
                 <div class="card-buttons">
                     <button class="more-btn">More</button>
                     <button class="add-btn">Add to Cart</button>
                 </div>
             </div>
-            <div class="main-card">
+
+
+            <!-- CARD 2 -->
+            <div class="main-card" data-id="102" data-name='LG 32" Smart LED TV' data-price="340"
+                data-image="images/tv.png" data-category="Electronics"
+                data-description="Smart entertainment with stunning detail." data-bestseller="true">
+
                 <span class="best-seller-badge">
                     <i class="fa-solid fa-trophy"></i>
                     Best Seller
                 </span>
-                <i class="fa-regular fa-heart heart-icon" id="heart"></i>
-                <img src="images/tv.png" class="maincard_image" alt="Fridge Image">
+
+                <i class="fa-regular fa-heart heart-icon"></i>
+
+                <img src="images/tv.png" class="maincard_image" alt="TV Image">
                 <h1 class="product-name">LG 32" Smart LED TV</h1>
                 <p class="product-description">
                     Smart entertainment. Stunning detail. Slim design.
                 </p>
                 <h3 class="product-cost">$340</h3>
+
                 <div class="card-buttons">
                     <button class="more-btn">More</button>
                     <button class="add-btn">Add to Cart</button>
                 </div>
             </div>
-            <div class="main-card">
+
+            <!-- CARD 3 -->
+            <div class="main-card" data-id="103" data-name='EdgeStar 18" Built-In Dishwasher' data-price="580"
+                data-image="images/dishwasher.png" data-category="Kitchen Appliance"
+                data-description="Compact built-in dishwasher with powerful cleaning." data-bestseller="true">
+
                 <span class="best-seller-badge">
                     <i class="fa-solid fa-trophy"></i>
                     Best Seller
                 </span>
-                <i class="fa-regular fa-heart heart-icon" id="heart"></i>
-                <img src="images/dishwasher.png" class="maincard_image" alt="Fridge Image">
-                <h1 class="product-name">EdgeStar 18" Built-In </h1>
+
+                <i class="fa-regular fa-heart heart-icon"></i>
+
+                <img src="images/dishwasher.png" class="maincard_image" alt="Dishwasher Image">
+                <h1 class="product-name">EdgeStar 18" Built-In</h1>
                 <p class="product-description">
                     Compact design, sparkling clean
                 </p>
                 <h3 class="product-cost">$580</h3>
+
                 <div class="card-buttons">
                     <button class="more-btn">More</button>
                     <button class="add-btn">Add to Cart</button>
                 </div>
             </div>
-            <div class="main-card">
+
+            <!-- Card 4 -->
+
+            <div class="main-card" data-id="101" data-name="Artel HD 341FN" data-price="520"
+                data-image="images/fridge.png" data-category="Kitchen Appliance"
+                data-description="Smart storage with energy efficient cooling." data-bestseller="true" data-star="4.7"
+                data-stock="120" data-brand="images/LG.png"> <span class="best-seller-badge"> <i
+                        class="fa-solid fa-trophy"></i> Best Seller </span> <i
+                    class="fa-regular fa-heart heart-icon"></i> <img src="images/fridge.png" class="maincard_image"
+                    alt="Fridge Image">
+                <h1 class="product-name">Artel HD 341FN</h1>
+                <p class="product-description">Smart storage. Perfect fit.</p>
+                <h3 class="product-cost">$520</h3>
+                <div class="card-buttons"> <button class="more-btn">More</button> <button class="add-btn">Add to
+                        Cart</button> </div>
+            </div>
+
+            <!-- Card 5 -->
+
+            <div class="main-card" data-id="101" data-name="Artel HD 341FN" data-price="520"
+                data-image="images/fridge.png" data-category="Kitchen Appliance"
+                data-description="Smart storage with energy efficient cooling." data-bestseller="true" data-star="4.7"
+                data-stock="120" data-brand="images/LG.png">
+
                 <span class="best-seller-badge">
                     <i class="fa-solid fa-trophy"></i>
                     Best Seller
                 </span>
-                <i class="fa-regular fa-heart heart-icon" id="heart"></i>
+
+                <i class="fa-regular fa-heart heart-icon"></i>
+
                 <img src="images/fridge.png" class="maincard_image" alt="Fridge Image">
                 <h1 class="product-name">Artel HD 341FN</h1>
-                <p class="product-description">
-                    Smart storage. Perfect fit.
-                </p>
+                <p class="product-description">Smart storage. Perfect fit.</p>
                 <h3 class="product-cost">$520</h3>
+
                 <div class="card-buttons">
                     <button class="more-btn">More</button>
                     <button class="add-btn">Add to Cart</button>
                 </div>
             </div>
-            <div class="main-card">
-                <span class="best-seller-badge">
-                    <i class="fa-solid fa-trophy"></i>
-                    Best Seller
-                </span>
-                <i class="fa-regular fa-heart heart-icon" id="heart"></i>
-                <img src="images/tv.png" class="maincard_image" alt="Fridge Image">
-                <h1 class="product-name">LG 32" Smart LED TV</h1>
-                <p class="product-description">
-                    Smart entertainment. Stunning detail. Slim design.
-                </p>
-                <h3 class="product-cost">$340</h3>
-                <div class="card-buttons">
-                    <button class="more-btn">More</button>
-                    <button class="add-btn">Add to Cart</button>
-                </div>
-            </div>
-            <div class="main-card">
-                <span class="best-seller-badge">
-                    <i class="fa-solid fa-trophy"></i>
-                    Best Seller
-                </span>
-                <i class="fa-regular fa-heart heart-icon" id="heart"></i>
-                <img src="images/fridge.png" class="maincard_image" alt="Fridge Image">
-                <h1 class="product-name">Artel HD 341FN</h1>
-                <p class="product-description">
-                    Smart storage. Perfect fit.
-                </p>
-                <h3 class="product-cost">$520</h3>
-                <div class="card-buttons">
-                    <button class="more-btn">More</button>
-                    <button class="add-btn">Add to Cart</button>
-                </div>
-            </div>
-            <div class="main-card">
-                <span class="best-seller-badge">
-                    <i class="fa-solid fa-trophy"></i>
-                    Best Seller
-                </span>
-                <i class="fa-regular fa-heart heart-icon" id="heart"></i>
-                <img src="images/tv.png" class="maincard_image" alt="Fridge Image">
-                <h1 class="product-name">LG 32" Smart LED TV</h1>
-                <p class="product-description">
-                    Smart entertainment. Stunning detail. Slim design.
-                </p>
-                <h3 class="product-cost">$340</h3>
-                <div class="card-buttons">
-                    <button class="more-btn">More</button>
-                    <button class="add-btn">Add to Cart</button>
-                </div>
-            </div>
-            <div class="main-card">
-                <span class="best-seller-badge">
-                    <i class="fa-solid fa-trophy"></i>
-                    Best Seller
-                </span>
-                <i class="fa-regular fa-heart heart-icon" id="heart"></i>
-                <img src="images/dishwasher.png" class="maincard_image" alt="Fridge Image">
-                <h1 class="product-name">EdgeStar 18" Built-In </h1>
-                <p class="product-description">
-                    Compact design, sparkling clean
-                </p>
-                <h3 class="product-cost">$580</h3>
-                <div class="card-buttons">
-                    <button class="more-btn">More</button>
-                    <button class="add-btn">Add to Cart</button>
-                </div>
-            </div>
+
         </div>
     </div>
     <!-- /Bestsellers section -->
 
     <!-- FAQs section -->
-    <section class="faq">
+    <section class="faq" id="faqs">
         <h2 class="faq-title">FAQs</h2>
 
         <div class="faq-item">
@@ -561,7 +580,7 @@
     </footer>
     <!-- /Footer section -->
 
-    <script src="JavaScripts/main.js"></script>
+    <script type="module" src="JavaScripts/main.js"></script>
     <script src="JavaScripts/FAQs.js"></script>
 </body>
 

@@ -1,135 +1,215 @@
-/* Product page */
+/* ===============================
+   PRODUCT PAGE
+=============================== */
 
 .product-detail {
-    max-width: 100%;
+    width: 100%;
     margin: 2rem 0;
 }
 
+/* ===============================
+   CATEGORY
+=============================== */
 
 .product-category {
     display: inline-block;
-    background: #ddd;
-    padding: 6px 12px;
-    border-radius: 8px;
-    margin-bottom: 12px;
+    background: #eee;
+    padding: 6px 14px;
+    border-radius: 10px;
     font-size: 13px;
+    margin-bottom: 12px;
 }
+
+/* ===============================
+   CARD
+=============================== */
 
 .product-card {
     background: #fff;
     border-radius: 16px;
-    padding: 16px;
+    padding: 20px;
 }
+
+/* ===============================
+   IMAGE
+=============================== */
 
 .product-image {
     position: relative;
     background: #f7f7f7;
-    border-radius: 12px;
-    padding: 20px;
+    border-radius: 14px;
+    padding: 24px;
     text-align: center;
 }
 
 .product-image img {
     max-width: 100%;
     height: auto;
+    object-fit: contain;
 }
+
+/* ===============================
+   SAVE BADGE
+=============================== */
 
 .save-badge {
     position: absolute;
-    top: 12px;
-    right: 12px;
-    background: red;
+    top: 14px;
+    right: 14px;
+    background: #ff3b3b;
     color: #fff;
     font-size: 12px;
-    padding: 4px 8px;
-    border-radius: 12px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    display: none;
 }
+
+/* ===============================
+   INFO
+=============================== */
 
 .product-info {
     margin-top: 20px;
 }
 
+/* ===============================
+   BRAND
+=============================== */
+
 .brand {
     display: flex;
     align-items: center;
-    gap: 6px;
-    font-size: 14px;
+    gap: 8px;
+    margin-bottom: 6px;
 }
 
 .brand img {
-    width: 60px;
+    width: 70px;
+    height: auto;
 }
+
+/* ===============================
+   TITLE
+=============================== */
 
 .product-title {
-    font-size: 20px;
-    margin: 8px 0;
+    font-size: 22px;
+    margin: 6px 0 10px;
 }
 
+/* ===============================
+   RATING (STAR FILL SYSTEM)
+=============================== */
+
 .rating {
-    font-size: 13px;
     display: flex;
     align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
 }
 
 .stars {
-    color: #f1c40f;
-    transition: color 0.3s ease;
+    position: relative;
+    font-size: 22px;
+    line-height: 1;
+    color: #ddd;
+    /* default stars */
 }
 
-.rating span {
-    color: #555;
-    margin-left: 6px;
+.stars::before {
+    content: "★★★★★";
 }
+
+.stars-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0%;
+    color: #f1c40f;
+    /* filled stars */
+}
+
+.stars-fill::before {
+    content: "★★★★★";
+}
+
+.rating-value {
+    font-size: 14px;
+    color: #555;
+}
+
+/* ===============================
+   PRICE
+=============================== */
 
 .price {
-    margin: 12px 0;
+    margin: 14px 0;
 }
 
 .price strong {
-    font-size: 22px;
+    font-size: 24px;
+    color: #000;
 }
 
 .old-price {
     text-decoration: line-through;
-    color: #777;
-    margin-left: 8px;
+    color: #888;
+    margin-left: 10px;
+    font-size: 14px;
 }
+
+/* ===============================
+   STOCK
+=============================== */
 
 .stock {
     display: flex;
-    gap: 10px;
     align-items: center;
-    margin-bottom: 12px;
+    gap: 10px;
+    margin-bottom: 14px;
 }
 
-.in-stock {
-    background: #2ecc71;
-    color: #fff;
-    padding: 4px 10px;
-    border-radius: 8px;
-    font-size: 12px;
-}
-
-.qty {
+.product-stock {
     font-size: 13px;
+    font-weight: 600;
+    color: #2ecc71;
 }
+
+.product-stock.out {
+    color: #e74c3c;
+}
+
+/* ===============================
+   DESCRIPTION
+=============================== */
 
 .description h4 {
     margin-bottom: 6px;
 }
 
 .description p {
-    font-size: 13px;
+    font-size: 14px;
     color: #555;
+    line-height: 1.5;
 }
 
+/* ===============================
+   WARRANTY
+=============================== */
+
 .warranty {
-    background: #e8f1ff;
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 12px;
-    margin: 14px 0;
+    background: #eef4ff;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 13px;
+    margin: 16px 0;
 }
+
+/* ===============================
+   BUTTON
+=============================== */
 
 .add-btn {
     width: 100%;
@@ -137,15 +217,26 @@
     background: #0d47ff;
     color: #fff;
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
     font-size: 16px;
     cursor: pointer;
+    transition: background 0.3s ease;
 }
 
-/* Responsiveness */
+.add-btn:hover {
+    background: #0039d6;
+}
 
-/* Tablet */
+.add-btn:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
 
+/* ===============================
+   RESPONSIVE
+=============================== */
+
+/* TABLET */
 @media (min-width: 768px) {
     .product-card {
         display: grid;
@@ -160,8 +251,7 @@
     }
 }
 
-/* Desktop */
-
+/* DESKTOP */
 @media (min-width: 1200px) {
     .product-card {
         grid-template-columns: 1fr 1.2fr;
@@ -170,14 +260,11 @@
     }
 }
 
-/* Large screen */
-
+/* LARGE SCREEN */
 @media (min-width: 1500px) {
     .product-card {
         grid-template-columns: 1fr 1.4fr;
         gap: 56px;
         max-width: 1400px;
     }
-
-
 }

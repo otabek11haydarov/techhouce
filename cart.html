@@ -29,9 +29,9 @@
                             <p class="b-nav__link">Help</p>
 
                             <div class="dropdown-items">
-                                <a href="FAQs.html" class="dropdown-item">FAQs</a>
-                                <a href="contactus.html" class="dropdown-item">Contact Us</a>
-                                <a href="warranty.html" class="dropdown-item">Warranty</a>
+                                <a href="#faqs" class="dropdown-item">FAQs</a>
+                                <a href="location.html" class="dropdown-item">Our store locations</a>
+                                <a href="about.html" class="dropdown-item">About</a>
                             </div>
                         </li>
 
@@ -121,66 +121,21 @@
     <!-- Cart section -->
 
     <section class="cart">
+
         <!-- Steps -->
         <div class="checkout-steps">
-            <span class="step step-1">1 Shopping cart</span>
+            <span class="step step-1 active">1 Shopping cart</span>
             <span class="step step-2">2 Checkout details</span>
             <span class="step step-3">3 Order complete</span>
         </div>
 
         <div class="cart-layout">
+
             <!-- LEFT -->
             <div class="cart-left">
-                <div class="cart-items" id="cartItems">
-                    <div class="item" data-price="339">
-                        <img src="images/vacuum cleaner.png" alt="Vacuum Cleaner">
 
-                        <div class="info">
-                            <h3>Vacuum Cleaner</h3>
-                            <p>Color: Black</p>
-
-                            <div class="qty">
-                                <button class="minus">-</button>
-                                <span class="count">2</span>
-                                <button class="plus">+</button>
-                            </div>
-                        </div>
-
-                        <span class="price">$678</span>
-                    </div>
-                    <div class="item" data-price="339">
-                        <img src="images/vacuum cleaner.png" alt="Vacuum Cleaner">
-
-                        <div class="info">
-                            <h3>Vacuum Cleaner</h3>
-                            <p>Color: Black</p>
-
-                            <div class="qty">
-                                <button class="minus">-</button>
-                                <span class="count">2</span>
-                                <button class="plus">+</button>
-                            </div>
-                        </div>
-
-                        <span class="price">$678</span>
-                    </div>
-                    <div class="item" data-price="339">
-                        <img src="images/vacuum cleaner.png" alt="Vacuum Cleaner">
-
-                        <div class="info">
-                            <h3>Vacuum Cleaner</h3>
-                            <p>Color: Black</p>
-
-                            <div class="qty">
-                                <button class="minus">-</button>
-                                <span class="count">2</span>
-                                <button class="plus">+</button>
-                            </div>
-                        </div>
-
-                        <span class="price">$678</span>
-                    </div>
-                </div>
+                <!-- ❗ ITEMLAR SHU YERGA JS TOMONIDAN QO‘SHILADI -->
+                <div class="cart-items" id="cartItems"></div>
 
                 <div class="coupon">
                     <h4>Have a coupon or promo code?</h4>
@@ -189,27 +144,26 @@
                         <button>Apply</button>
                     </div>
                 </div>
+
             </div>
 
+            <!-- RIGHT -->
             <div class="summary">
                 <h3>Cart summary</h3>
 
                 <label>
                     <input type="radio" name="shipping" value="0" checked>
-                    Free shipping
-                    <span>$0.00</span>
+                    Free shipping <span>$0.00</span>
                 </label>
 
                 <label>
                     <input type="radio" name="shipping" value="15">
-                    Express shipping
-                    <span>+$15.00</span>
+                    Express shipping <span>+$15.00</span>
                 </label>
 
                 <label>
                     <input type="radio" name="shipping" value="21">
-                    Pick up
-                    <span>$21.00</span>
+                    Pick up <span>$21.00</span>
                 </label>
 
                 <div class="total">
@@ -318,8 +272,8 @@
     <!-- /Footer section -->
 
     <!-- JavaScripts -->
-    <script src="JavaScripts/main.js"></script>
-    <script src="JavaScripts/cart.js"></script>
+    <script type="module" src="JavaScripts/main.js"></script>
+    <!-- <script src="JavaScripts/cart.js"></script> -->
 
 </body>
 
