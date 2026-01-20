@@ -58,12 +58,27 @@
 
                 <!-- SEARCH -->
                 <div class="search-wrapper">
-                    <form class="search-bar">
-                        <input type="text" placeholder="Search products">
-                        <button type="submit" aria-label="Search">
-                            <span class="search__text-btn">Let's Go</span><i class="fa-solid fa-magnifying-glass"></i>
-                        </button>
-                    </form>
+                    <div class="search-container">
+                        <div class="search-box">
+                            <input type="text" id="searchInput" placeholder="Search products">
+                            <span id="clearBtn">×</span>
+                            <button class="search-btn">Let's Go!</button>
+                        </div>
+
+                        <div class="search-dropdown" id="searchDropdown">
+                            <div class="search-categories">
+                                <p class="dropdown-title">Categories</p>
+                                <ul id="categoryList"></ul>
+                            </div>
+
+                            <div class="search-products">
+                                <p class="dropdown-title">
+                                    Our most popular results matching <b id="searchWord"></b>
+                                </p>
+                                <div id="productList"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- ICONS -->
@@ -120,66 +135,69 @@
 
     <!-- Product page -->
     <section class="product-detail">
-
         <div class="product-card">
 
-            <!-- IMAGE -->
+            <!-- Image -->
             <div class="product-image">
                 <span class="save-badge"></span>
                 <img src="" alt="Product Image">
             </div>
 
-            <!-- INFO -->
+            <!-- Info -->
             <div class="product-info">
 
-                <!-- CATEGORY -->
+                <!-- Category -->
                 <span class="product-category"></span>
 
-                <!-- BRAND -->
-                <div class="brand">
+                <!-- Brand -->
+                <div class="brand-row">
                     <img class="product-brand" src="" alt="Brand">
                 </div>
 
-                <!-- TITLE -->
+                <div class="details-list" id="detailsList"></div>
+
+                <!-- Title -->
                 <h1 class="product-title"></h1>
 
-                <!-- RATING (0–5 dynamic stars) -->
+                <!-- Rating -->
                 <div class="rating">
-                    <div class="stars">
-                        <div class="stars-fill"></div>
+                    <div class="stars" id="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
                     </div>
                     <span class="rating-value"></span>
                 </div>
 
-                <!-- PRICE -->
+                <!-- Price -->
                 <div class="price">
                     <strong></strong>
                     <span class="old-price"></span>
                 </div>
 
-                <!-- STOCK -->
+                <!-- Stock -->
                 <div class="stock">
                     <span class="product-stock"></span>
                 </div>
 
-                <!-- DESCRIPTION -->
+                <!-- Description -->
                 <div class="description">
                     <h4>Description</h4>
                     <p></p>
                 </div>
 
-                <!-- WARRANTY -->
+                <!-- Warranty -->
                 <div class="warranty">
                     Warranty: 3 years manufacturer warranty included
                 </div>
 
-                <!-- ADD TO CART -->
+                <!-- Cart -->
                 <button class="add-btn">Add to Cart</button>
 
             </div>
-
         </div>
-
     </section>
 
     <!-- /Product page -->

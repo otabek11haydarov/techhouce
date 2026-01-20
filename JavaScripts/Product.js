@@ -1,44 +1,91 @@
 export function initProductPage() {
+    // Product page
+    const titleEl = document.querySelector(".product-title");
+    if (!titleEl) return;
+
     const product = JSON.parse(localStorage.getItem("selectedProduct"));
     if (!product) return;
 
-    // ===============================
-    // BASIC
-    // ===============================
-    document.querySelector(".product-title").textContent = product.name;
-    document.querySelector(".price strong").textContent = `$${product.price}`;
-    document.querySelector(".product-image img").src = product.image;
-    document.querySelector(".product-category").textContent = product.category;
-    document.querySelector(".description p").textContent = product.description;
+    // Basic info
+    titleEl.textContent = product.name;
 
-    // ===============================
-    // BRAND
-    // ===============================
+    const priceStrong = document.querySelector(".price strong");
+    if (priceStrong) {
+        priceStrong.textContent = `$${product.price}`;
+    }
+
+    const imgEl = document.querySelector(".product-image img");
+    if (imgEl) {
+        imgEl.src = product.image;
+        imgEl.alt = product.name;
+    }
+
+    const categoryEl = document.querySelector(".product-category");
+    if (categoryEl) {
+        categoryEl.textContent = product.category;
+    }
+
+    const descEl = document.querySelector(".description p");
+    if (descEl) {
+        descEl.textContent = product.description;
+    }
+
+    // Brand
     const brandImg = document.querySelector(".product-brand");
+    const brandRow = document.querySelector(".brand-row");
+
     if (brandImg && product.brand) {
         brandImg.src = product.brand;
+    } else if (brandRow) {
+        brandRow.style.display = "none";
     }
 
-    // ===============================
-    // STAR RATING (0–5 STAR FILL)
-    // ===============================
-    const starsFill = document.querySelector(".stars-fill");
+    // Details (brand style rows)
+    const detailsList = document.getElementById("detailsList");
+
+    if (detailsList) {
+        const details = [
+            { label: "Height", value: product.height },
+            { label: "Width", value: product.width },
+            { label: "Weight", value: product.weight },
+            { label: "Power", value: product.power }
+        ];
+
+        detailsList.innerHTML = "";
+
+        details.forEach(item => {
+            if (!item.value) return;
+
+            detailsList.insertAdjacentHTML("beforeend", `
+                <div class="detail-row">
+                    <span class="detail-label">${item.label}</span>
+                    <span class="detail-line"></span>
+                    <span class="detail-value">${item.value}</span>
+                </div>
+            `);
+        });
+    }
+
+    // Rating
+    const stars = document.querySelectorAll("#stars i");
     const ratingValue = document.querySelector(".rating-value");
 
-    const rating = Math.max(0, Math.min(5, Number(product.star) || 0));
-    const fillPercent = (rating / 5) * 100;
+    let rating = Number(product.star);
+    if (Number.isNaN(rating)) rating = 0;
 
-    if (starsFill) {
-        starsFill.style.width = `${fillPercent}%`;
-    }
+    rating = Math.max(0, Math.min(5, rating));
+    ratingValue.textContent = rating.toFixed(1);
 
-    if (ratingValue) {
-        ratingValue.textContent = rating.toFixed(1);
-    }
+    stars.forEach((star, index) => {
+        if (index < Math.round(rating)) {
+            star.classList.add("active");
+        } else {
+            star.classList.remove("active");
+        }
+    });
 
-    // ===============================
-    // STOCK
-    // ===============================
+
+    // Stock
     const stockEl = document.querySelector(".product-stock");
     const addBtn = document.querySelector(".add-btn");
 
@@ -53,9 +100,7 @@ export function initProductPage() {
         }
     }
 
-    // ===============================
-    // OLD PRICE
-    // ===============================
+    // Old price
     const oldPriceEl = document.querySelector(".old-price");
     if (oldPriceEl) {
         if (product.oldPrice && product.oldPrice > product.price) {
@@ -66,9 +111,7 @@ export function initProductPage() {
         }
     }
 
-    // ===============================
-    // SAVE BADGE
-    // ===============================
+    // Save badge
     const saveBadge = document.querySelector(".save-badge");
     if (saveBadge) {
         if (product.save) {
@@ -79,26 +122,14 @@ export function initProductPage() {
         }
     }
 
-    // ===============================
-    // BEST SELLER
-    // ===============================
-    if (product.bestSeller) {
-        const badge = document.createElement("span");
-        badge.className = "best-seller-badge";
-        badge.innerHTML = `<i class="fa-solid fa-trophy"></i> Best Seller`;
-        document.querySelector(".product-image")?.appendChild(badge);
-    }
-
-    // ===============================
-    // ADD TO CART
-    // ===============================
+    // Cart
     addBtn?.addEventListener("click", () => {
         if (product.stock === 0) {
             alert("Out of stock!");
             return;
         }
 
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
         const exists = cart.find(p => p.id === product.id);
 
         if (exists) {

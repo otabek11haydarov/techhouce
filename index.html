@@ -58,12 +58,27 @@
 
                 <!-- SEARCH -->
                 <div class="search-wrapper">
-                    <form class="search-bar">
-                        <input type="text" placeholder="Search products">
-                        <button type="submit" aria-label="Search">
-                            <span class="search__text-btn">Let's Go</span><i class="fa-solid fa-magnifying-glass"></i>
-                        </button>
-                    </form>
+                    <div class="search-container">
+                        <div class="search-box">
+                            <input type="text" id="searchInput" placeholder="Search products">
+                            <span id="clearBtn">×</span>
+                            <button class="search-btn">Let's Go!</button>
+                        </div>
+
+                        <div class="search-dropdown" id="searchDropdown">
+                            <div class="search-categories">
+                                <p class="dropdown-title">Categories</p>
+                                <ul id="categoryList"></ul>
+                            </div>
+
+                            <div class="search-products">
+                                <p class="dropdown-title">
+                                    Our most popular results matching <b id="searchWord"></b>
+                                </p>
+                                <div id="productList"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- ICONS -->
@@ -187,10 +202,11 @@
 
         <div class="cards-grid">
 
-            <!-- 1 -->
             <div class="main-card" data-id="1" data-name="LG VK76A02NTL" data-price="339" data-oldprice="389"
                 data-save="50" data-image="images/vacuum cleaner.png" data-category="Cleaning Appliance"
-                data-description="Compact power with deep cleaning." data-bestseller="false">
+                data-description="Compact power with deep cleaning." data-stock="12" data-star="1.6"
+                data-brand="images/LG.png" data-height="320 mm" data-width="250 mm" data-weight="4.5 kg"
+                data-power="1800 W">
 
                 <p class="save-cost">Save $50</p>
                 <i class="fa-regular fa-heart heart-icon"></i>
@@ -204,10 +220,11 @@
                 </div>
             </div>
 
-            <!-- 2 -->
             <div class="main-card" data-id="2" data-name="Shivaki SMW 2120" data-price="339" data-oldprice="399"
-                data-image="images/microoven.png" data-category="Kitchen Appliance"
-                data-description="Reliable microwave oven for quick meals and everyday cooking.">
+                data-save="60" data-image="images/microoven.png" data-category="Kitchen Appliance"
+                data-description="Reliable microwave oven for quick meals and everyday cooking." data-stock="8"
+                data-star="4.3" data-brand="images/Shivaki.png" data-height="290 mm" data-width="480 mm"
+                data-weight="12 kg" data-power="900 W">
 
                 <p class="save-cost">Save $60</p>
                 <i class="fa-regular fa-heart heart-icon"></i>
@@ -221,10 +238,11 @@
                 </div>
             </div>
 
-            <!-- 3 -->
             <div class="main-card" data-id="3" data-name="Hofmann Compact 3D" data-price="335" data-oldprice="410"
-                data-image="images/airconditsioner.png" data-category="Heating & Cooling"
-                data-description="Energy efficient air conditioner with fast cooling and silent operation.">
+                data-save="75" data-image="images/airconditsioner.png" data-category="Heating & Cooling"
+                data-description="Energy efficient air conditioner with fast cooling and silent operation."
+                data-stock="5" data-star="4.7" data-brand="images/Hofmann.png" data-height="600 mm" data-width="800 mm"
+                data-weight="28 kg" data-power="2200 W">
 
                 <p class="save-cost">Save $75</p>
                 <i class="fa-regular fa-heart heart-icon"></i>
@@ -238,15 +256,16 @@
                 </div>
             </div>
 
-            <!-- 4 -->
             <div class="main-card" data-id="4" data-name="LG VK76A02NTL Plus" data-price="339" data-oldprice="389"
-                data-image="images/vacuum cleaner.png" data-category="Cleaning Appliance"
-                data-description="Advanced filtration system with strong suction power for daily cleaning.">
+                data-save="50" data-image="images/vacuum cleaner.png" data-category="Cleaning Appliance"
+                data-description="Advanced filtration system with strong suction power for daily cleaning."
+                data-stock="10" data-star="4.5" data-brand="images/LG.png" data-height="330 mm" data-width="260 mm"
+                data-weight="4.8 kg" data-power="1900 W">
 
                 <p class="save-cost">Save $50</p>
                 <i class="fa-regular fa-heart heart-icon"></i>
                 <img src="images/vacuum cleaner.png" class="maincard_image">
-                <h1 class="product-name">LG VK76A02NTL</h1>
+                <h1 class="product-name">LG VK76A02NTL Plus</h1>
                 <p class="product-description">Compact power. Deep cleaning. Dust-free living.</p>
                 <h3 class="product-cost"><span class="old-cost">$389</span> $339</h3>
                 <div class="card-buttons">
@@ -255,15 +274,16 @@
                 </div>
             </div>
 
-            <!-- 5 -->
             <div class="main-card" data-id="5" data-name="Shivaki SMW 2120 Pro" data-price="339" data-oldprice="399"
-                data-image="images/microoven.png" data-category="Kitchen Appliance"
-                data-description="Modern microwave with multiple cooking modes and compact design.">
+                data-save="60" data-image="images/microoven.png" data-category="Kitchen Appliance"
+                data-description="Modern microwave with multiple cooking modes and compact design." data-stock="6"
+                data-star="4.4" data-brand="images/Shivaki.png" data-height="300 mm" data-width="500 mm"
+                data-weight="13 kg" data-power="1000 W">
 
                 <p class="save-cost">Save $60</p>
                 <i class="fa-regular fa-heart heart-icon"></i>
                 <img src="images/microoven.png" class="maincard_image">
-                <h1 class="product-name">Shivaki SMW 2120</h1>
+                <h1 class="product-name">Shivaki SMW 2120 Pro</h1>
                 <p class="product-description">From quick snacks to full meals — ready in minutes.</p>
                 <h3 class="product-cost"><span class="old-cost">$399</span> $339</h3>
                 <div class="card-buttons">
@@ -274,6 +294,7 @@
 
         </div>
     </section>
+
 
     <!-- /Offers section -->
 

@@ -1,28 +1,17 @@
-/* ===============================
-   PRODUCT PAGE
-=============================== */
-
 .product-detail {
     width: 100%;
     margin: 2rem 0;
 }
 
-/* ===============================
-   CATEGORY
-=============================== */
 
 .product-category {
     display: inline-block;
     background: #eee;
-    padding: 6px 14px;
+    padding: 6px 14px !important;
     border-radius: 10px;
     font-size: 13px;
     margin-bottom: 12px;
 }
-
-/* ===============================
-   CARD
-=============================== */
 
 .product-card {
     background: #fff;
@@ -30,9 +19,6 @@
     padding: 20px;
 }
 
-/* ===============================
-   IMAGE
-=============================== */
 
 .product-image {
     position: relative;
@@ -48,9 +34,6 @@
     object-fit: contain;
 }
 
-/* ===============================
-   SAVE BADGE
-=============================== */
 
 .save-badge {
     position: absolute;
@@ -64,17 +47,9 @@
     display: none;
 }
 
-/* ===============================
-   INFO
-=============================== */
-
 .product-info {
     margin-top: 20px;
 }
-
-/* ===============================
-   BRAND
-=============================== */
 
 .brand {
     display: flex;
@@ -83,56 +58,32 @@
     margin-bottom: 6px;
 }
 
-.brand img {
-    width: 70px;
-    height: auto;
-}
 
-/* ===============================
-   TITLE
-=============================== */
+.product-info>* {
+    margin-left: 0;
+    padding-left: 0;
+}
 
 .product-title {
     font-size: 22px;
     margin: 6px 0 10px;
 }
 
-/* ===============================
-   RATING (STAR FILL SYSTEM)
-=============================== */
 
+/* Rating */
 .rating {
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-bottom: 10px;
 }
 
-.stars {
-    position: relative;
-    font-size: 22px;
-    line-height: 1;
+.stars i {
     color: #ddd;
-    /* default stars */
+    font-size: 18px;
 }
 
-.stars::before {
-    content: "★★★★★";
-}
-
-.stars-fill {
-    position: absolute;
-    top: 0;
-    left: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 0%;
+.stars i.active {
     color: #f1c40f;
-    /* filled stars */
-}
-
-.stars-fill::before {
-    content: "★★★★★";
 }
 
 .rating-value {
@@ -140,9 +91,12 @@
     color: #555;
 }
 
-/* ===============================
-   PRICE
-=============================== */
+
+/* Rating number */
+.rating-value {
+    font-size: 14px;
+    color: #555;
+}
 
 .price {
     margin: 14px 0;
@@ -159,10 +113,6 @@
     margin-left: 10px;
     font-size: 14px;
 }
-
-/* ===============================
-   STOCK
-=============================== */
 
 .stock {
     display: flex;
@@ -181,10 +131,6 @@
     color: #e74c3c;
 }
 
-/* ===============================
-   DESCRIPTION
-=============================== */
-
 .description h4 {
     margin-bottom: 6px;
 }
@@ -195,9 +141,6 @@
     line-height: 1.5;
 }
 
-/* ===============================
-   WARRANTY
-=============================== */
 
 .warranty {
     background: #eef4ff;
@@ -206,10 +149,6 @@
     font-size: 13px;
     margin: 16px 0;
 }
-
-/* ===============================
-   BUTTON
-=============================== */
 
 .add-btn {
     width: 100%;
@@ -220,7 +159,7 @@
     border-radius: 12px;
     font-size: 16px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .add-btn:hover {
@@ -232,9 +171,7 @@
     cursor: not-allowed;
 }
 
-/* ===============================
-   RESPONSIVE
-=============================== */
+/* Responsiveness */
 
 /* TABLET */
 @media (min-width: 768px) {
