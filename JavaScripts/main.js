@@ -7,6 +7,8 @@ import { initSearchAutocomplete } from "./search.js";
 import {initFilters} from "./filter.js";
 import {initHeatFavorites} from "./heartclicker.js";
 import {initFavoritesPage} from "./favorite.js";
+import {initShopNowButton} from "./shop.js";
+import {initHeaderScrollHide} from "./headereffect.js"
 
 document.addEventListener("DOMContentLoaded", () => {
     initCartMoreButtons();
@@ -16,25 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
     initFilters();
     initHeatFavorites();
     initFavoritesPage();
-    
+    initShopNowButton();
+    initHeaderScrollHide();
 });
 
-const shopNowBtn = document.getElementById("shopNow");
-if (shopNowBtn) {
-    shopNowBtn.addEventListener("click", () => {
-        window.location.href = "productspage.html";
-    });
-}
-
-let lastScrollTop = 0;
-const header = document.querySelector(".header-container");
-
-if (header) {
-    window.addEventListener("scroll", () => {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        header.classList.toggle("hide", scrollTop > lastScrollTop);
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    });
-};
 
 
