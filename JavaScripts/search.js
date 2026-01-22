@@ -1,7 +1,6 @@
 import { getProductFromCard } from "./productBuilder.js";
 
 export function initSearchAutocomplete() {
-    // Search
     const input = document.getElementById("searchInput");
     const dropdown = document.getElementById("searchDropdown");
     const productList = document.getElementById("productList");
@@ -14,7 +13,14 @@ export function initSearchAutocomplete() {
     const cards = [...document.querySelectorAll(".main-card")];
     const products = cards.map(getProductFromCard);
 
-    // Input
+    const categoryPages = {
+        "Heat and Cool": "heatcool.html",
+        "Cleaning": "cleaning.html",
+        "Kitchen": "kitchen.html",
+        "Smart Home": "smart.html",
+        "Personal Care": "personal.html"
+    };
+
     input.addEventListener("input", () => {
         const value = input.value.trim().toLowerCase();
 
@@ -32,7 +38,6 @@ export function initSearchAutocomplete() {
 
         const categories = new Set();
 
-        // Products
         products.forEach(p => {
             if (
                 p.name.toLowerCase().includes(value) ||
@@ -53,16 +58,20 @@ export function initSearchAutocomplete() {
             }
         });
 
-        // Categories
         categories.forEach(cat => {
-            categoryList.insertAdjacentHTML(
-                "beforeend",
-                `<li>${highlight(cat, value)}</li>`
-            );
+            const page = categoryPages[cat];
+            if (!page) return;
+
+            categoryList.insertAdjacentHTML("beforeend", `
+                <li>
+                    <a href="${page}">
+                        ${highlight(cat, value)}
+                    </a>
+                </li>
+            `);
         });
     });
 
-    // Click
     productList.addEventListener("click", e => {
         const item = e.target.closest(".product-item");
         if (!item) return;
@@ -75,20 +84,17 @@ export function initSearchAutocomplete() {
         window.location.href = "Product.html";
     });
 
-    // Clear
     clearBtn.addEventListener("click", () => {
         input.value = "";
         hide();
     });
 
-    // Hide
     function hide() {
         dropdown.style.display = "none";
         clearBtn.style.display = "none";
     }
 }
 
-// Highlight
 function highlight(text, value) {
     return text.replace(
         new RegExp(`(${value})`, "gi"),

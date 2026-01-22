@@ -38,6 +38,17 @@
     left: 0;
 }
 
+#categoryFilter li {
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+#categoryFilter li.active {
+    background: #e6efff;
+    font-weight: 600;
+}
+
 .filters-header {
     display: flex;
     justify-content: space-between;

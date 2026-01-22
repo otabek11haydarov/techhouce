@@ -16,7 +16,7 @@
 <body>
 
     <!-- Header section -->
-    <div class="header-container" id="header-container">
+<div class="header-container" id="header-container">
         <header>
             <div class="blacktop">
                 <h4 class="blacktop-phone_number">
@@ -89,6 +89,9 @@
                     <a href="cart.html" aria-label="Shopping cart">
                         <i class="fa-solid fa-cart-shopping"></i>
                     </a>
+                    <a href="favorites.html" aria-label="Favorites">
+                        <i class="fa-solid fa-heart nav-icon"></i>
+                    </a>
                 </div>
 
                 <!-- Navbar -->
@@ -130,8 +133,7 @@
                 </li>
             </ul>
         </nav>
-    </div>
-    <!-- /Header section -->
+    </div>    <!-- /Header section -->
 
     <!-- Products page -->
 
@@ -150,25 +152,24 @@
 
             <div class="filter-box">
                 <h4>Categories</h4>
-                <ul>
-                    <li class="active">All Categories</li>
-                    <li>Kitchen Appliance</li>
-                    <li>Cleaning Appliance</li>
-                    <li>Heating & Cooling</li>
-                    <li>Personal Care</li>
-                    <li>Smart Home</li>
+                <ul id="categoryFilter">
+                    <li data-category="all" class="active">All Categories</li>
+                    <li data-category="Kitchen Appliance">Kitchen Appliance</li>
+                    <li data-category="Cleaning Appliance">Cleaning Appliance</li>
+                    <li data-category="Heating & Cooling">Heating & Cooling</li>
+                    <li data-category="Personal Care">Personal Care</li>
+                    <li data-category="Smart Home">Smart Home</li>
                 </ul>
             </div>
 
             <div class="filter-box">
                 <h4>Price</h4>
-                <select>
-                    <option>All Prices</option>
-                    <option>$50-$100</option>
-                    <option>$100-$300</option>
-                    <option>$300-$500</option>
-                    <option>$500-$1000</option>
-                    <option>More $1000</option>
+                <select id="priceFilter">
+                    <option value="all">All Prices</option>
+                    <option value="0-100">$0 – $100</option>
+                    <option value="100-300">$100 – $300</option>
+                    <option value="300-600">$300 – $600</option>
+                    <option value="600+">$600+</option>
                 </select>
             </div>
         </aside>
@@ -176,43 +177,65 @@
         <div class="products">
             <section class="maincards">
                 <div class="cards-grid">
-                    <div class="main-card" id="kitchen">
+                    <div class="main-card" data-id="6" data-name="Artel HD 341FN" data-price="520" data-oldprice=""
+                        data-save="" data-image="images/fridge.png" data-category="Kitchen Appliance"
+                        data-description="Smart storage. Perfect fit." data-stock="8" data-star="4.6"
+                        data-brand="images/Artel.png" data-height="1800 mm" data-width="700 mm" data-weight="65 kg"
+                        data-power="">
+
                         <span class="best-seller-badge">
                             <i class="fa-solid fa-trophy"></i>
                             Best Seller
                         </span>
-                        <i class="fa-regular fa-heart heart-icon" id="heart"></i>
+
+                        <i class="fa-regular fa-heart heart-icon"></i>
                         <img src="images/fridge.png" class="maincard_image" alt="Fridge Image">
                         <h1 class="product-name">Artel HD 341FN</h1>
                         <p class="product-description">Smart storage. Perfect fit.</p>
                         <h3 class="product-cost">$520</h3>
+
                         <div class="card-buttons">
-                            <button class="more-btn" id="more">More</button>
-                            <button class="add-btn" id="addCart">Add to Cart</button>
+                            <button class="more-btn">More</button>
+                            <button class="add-btn">Add to Cart</button>
                         </div>
                     </div>
-                    <div class="main-card" id="kitchen">
-                        <i class="fa-regular fa-heart heart-icon" id="heart"></i>
-                        <img src="images/dishwasher.png" class="maincard_image" alt="Fridge Image">
-                        <h1 class="product-name">EdgeStar 18" Built-In </h1>
-                        <p class="product-description">Compact design, sparkling clean</p>
+
+                    <div class="main-card" data-id="7" data-name="EdgeStar 18 Built-In Dishwasher" data-price="580"
+                        data-oldprice="" data-save="" data-image="images/dishwasher.png"
+                        data-category="Kitchen Appliance" data-description="Compact design, sparkling clean."
+                        data-stock="5" data-star="4.5" data-brand="images/EdgeStar.png" data-height="820 mm"
+                        data-width="450 mm" data-weight="40 kg" data-power="1200 W">
+
+                        <i class="fa-regular fa-heart heart-icon"></i>
+                        <img src="images/dishwasher.png" class="maincard_image" alt="Dishwasher Image">
+                        <h1 class="product-name">EdgeStar 18" Built-In</h1>
+                        <p class="product-description">Compact design, sparkling clean.</p>
                         <h3 class="product-cost">$580</h3>
+
                         <div class="card-buttons">
-                            <button class="more-btn" id="more">More</button>
-                            <button class="add-btn" id="addCart">Add to Cart</button>
+                            <button class="more-btn">More</button>
+                            <button class="add-btn">Add to Cart</button>
                         </div>
                     </div>
-                    <div class="main-card" id="kitchen">
-                        <i class="fa-regular fa-heart heart-icon" id="heart"></i>
-                        <img src="images/dishwasher.png" class="maincard_image" alt="Fridge Image">
-                        <h1 class="product-name">EdgeStar 18" Built-In </h1>
-                        <p class="product-description">Compact design, sparkling clean</p>
+
+                    <div class="main-card" data-id="8" data-name="EdgeStar 18 Built-In Dishwasher" data-price="580"
+                        data-oldprice="" data-save="" data-image="images/dishwasher.png"
+                        data-category="Kitchen Appliance" data-description="Compact design, sparkling clean."
+                        data-stock="4" data-star="4.5" data-brand="images/EdgeStar.png" data-height="820 mm"
+                        data-width="450 mm" data-weight="40 kg" data-power="1200 W">
+
+                        <i class="fa-regular fa-heart heart-icon"></i>
+                        <img src="images/dishwasher.png" class="maincard_image" alt="Dishwasher Image">
+                        <h1 class="product-name">EdgeStar 18" Built-In</h1>
+                        <p class="product-description">Compact design, sparkling clean.</p>
                         <h3 class="product-cost">$580</h3>
+
                         <div class="card-buttons">
-                            <button class="more-btn" id="more">More</button>
-                            <button class="add-btn" id="addCart">Add to Cart</button>
+                            <button class="more-btn">More</button>
+                            <button class="add-btn">Add to Cart</button>
                         </div>
                     </div>
+
                 </div>
             </section>
         </div>
@@ -221,122 +244,231 @@
 
     <section class="maincards">
         <div class="cards-grid">
-            <div class="main-card id=kitchen">
+            <div class="main-card" data-id="6" data-name="Artel HD 341FN" data-price="520" data-oldprice="" data-save=""
+                data-image="images/fridge.png" data-category="Kitchen Appliance"
+                data-description="Smart storage. Perfect fit." data-stock="8" data-star="4.6"
+                data-brand="images/Artel.png" data-height="1800 mm" data-width="700 mm" data-weight="65 kg"
+                data-power="">
+
                 <span class="best-seller-badge">
                     <i class="fa-solid fa-trophy"></i>
                     Best Seller
                 </span>
-                <i class="fa-regular fa-heart heart-icon" id="heart"></i>
+
+                <i class="fa-regular fa-heart heart-icon"></i>
                 <img src="images/fridge.png" class="maincard_image" alt="Fridge Image">
                 <h1 class="product-name">Artel HD 341FN</h1>
                 <p class="product-description">Smart storage. Perfect fit.</p>
                 <h3 class="product-cost">$520</h3>
+
                 <div class="card-buttons">
-                    <button class="more-btn" id="more">More</button>
-                    <button class="add-btn" id="addCart">Add to Cart</button>
+                    <button class="more-btn">More</button>
+                    <button class="add-btn">Add to Cart</button>
                 </div>
             </div>
 
-            <div class="main-card" id="smartHome">
+
+            <div class="main-card" data-id="10" data-name="LG 32 Smart LED TV" data-price="340" data-oldprice=""
+                data-save="" data-image="images/tv.png" data-category="Smart Home"
+                data-description="Smart entertainment. Stunning detail. Slim design." data-stock="7" data-star="4.7"
+                data-brand="images/LG.png" data-height="430 mm" data-width="730 mm" data-weight="5 kg" data-power="">
+
                 <span class="best-seller-badge">
                     <i class="fa-solid fa-trophy"></i>
                     Best Seller
                 </span>
-                <i class="fa-regular fa-heart heart-icon" id="heart"></i>
-                <img src="images/tv.png" class="maincard_image" alt="Fridge Image">
+
+                <i class="fa-regular fa-heart heart-icon"></i>
+
+                <img src="images/tv.png" class="maincard_image" alt="Smart TV Image">
+
                 <h1 class="product-name">LG 32" Smart LED TV</h1>
-                <p class="product-description">Smart entertainment. Stunning detail. Slim design.</p>
+
+                <p class="product-description">
+                    Smart entertainment. Stunning detail. Slim design.
+                </p>
+
                 <h3 class="product-cost">$340</h3>
+
                 <div class="card-buttons">
-                    <button class="more-btn" id="more">More</button>
-                    <button class="add-btn" id="addCart">Add to Cart</button>
+                    <button class="more-btn">More</button>
+                    <button class="add-btn">Add to Cart</button>
                 </div>
             </div>
 
-            <div class="main-card" id="kitchen">
-                <i class="fa-regular fa-heart heart-icon" id="heart"></i>
-                <img src="images/dishwasher.png" class="maincard_image" alt="Fridge Image">
-                <h1 class="product-name">EdgeStar 18" Built-In </h1>
-                <p class="product-description">Compact design, sparkling clean</p>
+
+            <div class="main-card" data-id="7" data-name="EdgeStar 18 Built-In Dishwasher" data-price="580"
+                data-oldprice="" data-save="" data-image="images/dishwasher.png" data-category="Kitchen Appliance"
+                data-description="Compact design, sparkling clean." data-stock="5" data-star="4.5"
+                data-brand="images/EdgeStar.png" data-height="820 mm" data-width="450 mm" data-weight="40 kg"
+                data-power="1200 W">
+
+                <i class="fa-regular fa-heart heart-icon"></i>
+                <img src="images/dishwasher.png" class="maincard_image" alt="Dishwasher Image">
+                <h1 class="product-name">EdgeStar 18" Built-In</h1>
+                <p class="product-description">Compact design, sparkling clean.</p>
                 <h3 class="product-cost">$580</h3>
+
                 <div class="card-buttons">
-                    <button class="more-btn" id="more">More</button>
-                    <button class="add-btn" id="addCart">Add to Cart</button>
+                    <button class="more-btn">More</button>
+                    <button class="add-btn">Add to Cart</button>
                 </div>
             </div>
 
-            <div class="main-card" id="kitchen">
-                <i class="fa-regular fa-heart heart-icon" id="heart"></i>
+
+            <div class="main-card" data-id="6" data-name="Artel HD 341FN" data-price="520" data-oldprice="" data-save=""
+                data-image="images/fridge.png" data-category="Kitchen Appliance"
+                data-description="Smart storage. Perfect fit." data-stock="8" data-star="4.6"
+                data-brand="images/Artel.png" data-height="1800 mm" data-width="700 mm" data-weight="65 kg"
+                data-power="">
+
+                <span class="best-seller-badge">
+                    <i class="fa-solid fa-trophy"></i>
+                    Best Seller
+                </span>
+
+                <i class="fa-regular fa-heart heart-icon"></i>
                 <img src="images/fridge.png" class="maincard_image" alt="Fridge Image">
                 <h1 class="product-name">Artel HD 341FN</h1>
                 <p class="product-description">Smart storage. Perfect fit.</p>
                 <h3 class="product-cost">$520</h3>
+
                 <div class="card-buttons">
-                    <button class="more-btn" id="more">More</button>
-                    <button class="add-btn" id="addCart">Add to Cart</button>
+                    <button class="more-btn">More</button>
+                    <button class="add-btn">Add to Cart</button>
                 </div>
             </div>
 
-            <div class="main-card" id="smartHome">
-                <i class="fa-regular fa-heart heart-icon" id="heart"></i>
-                <img src="images/tv.png" class="maincard_image" alt="Fridge Image">
+
+            <div class="main-card" data-id="10" data-name="LG 32 Smart LED TV" data-price="340" data-oldprice=""
+                data-save="" data-image="images/tv.png" data-category="Smart Home"
+                data-description="Smart entertainment. Stunning detail. Slim design." data-stock="7" data-star="4.7"
+                data-brand="images/LG.png" data-height="430 mm" data-width="730 mm" data-weight="5 kg" data-power="">
+
+                <span class="best-seller-badge">
+                    <i class="fa-solid fa-trophy"></i>
+                    Best Seller
+                </span>
+
+                <i class="fa-regular fa-heart heart-icon"></i>
+
+                <img src="images/tv.png" class="maincard_image" alt="Smart TV Image">
+
                 <h1 class="product-name">LG 32" Smart LED TV</h1>
-                <p class="product-description">Smart entertainment. Stunning detail. Slim design.</p>
+
+                <p class="product-description">
+                    Smart entertainment. Stunning detail. Slim design.
+                </p>
+
                 <h3 class="product-cost">$340</h3>
+
                 <div class="card-buttons">
-                    <button class="more-btn" id="more">More</button>
-                    <button class="add-btn" id="addCart">Add to Cart</button>
+                    <button class="more-btn">More</button>
+                    <button class="add-btn">Add to Cart</button>
                 </div>
             </div>
 
-            <div class="main-card" id="kitchen">
-                <i class="fa-regular fa-heart heart-icon" id="heart"></i>
+
+            <div class="main-card" data-id="6" data-name="Artel HD 341FN" data-price="520" data-oldprice="" data-save=""
+                data-image="images/fridge.png" data-category="Kitchen Appliance"
+                data-description="Smart storage. Perfect fit." data-stock="8" data-star="4.6"
+                data-brand="images/Artel.png" data-height="1800 mm" data-width="700 mm" data-weight="65 kg"
+                data-power="">
+
+                <span class="best-seller-badge">
+                    <i class="fa-solid fa-trophy"></i>
+                    Best Seller
+                </span>
+
+                <i class="fa-regular fa-heart heart-icon"></i>
                 <img src="images/fridge.png" class="maincard_image" alt="Fridge Image">
                 <h1 class="product-name">Artel HD 341FN</h1>
                 <p class="product-description">Smart storage. Perfect fit.</p>
                 <h3 class="product-cost">$520</h3>
+
                 <div class="card-buttons">
-                    <button class="more-btn" id="more">More</button>
-                    <button class="add-btn" id="addCart">Add to Cart</button>
+                    <button class="more-btn">More</button>
+                    <button class="add-btn">Add to Cart</button>
                 </div>
             </div>
 
-            <div class="main-card" id="smartHome">
-                <i class="fa-regular fa-heart heart-icon" id="heart"></i>
-                <img src="images/tv.png" class="maincard_image" alt="Fridge Image">
+
+            <div class="main-card" data-id="10" data-name="LG 32 Smart LED TV" data-price="340" data-oldprice=""
+                data-save="" data-image="images/tv.png" data-category="Smart Home"
+                data-description="Smart entertainment. Stunning detail. Slim design." data-stock="7" data-star="4.7"
+                data-brand="images/LG.png" data-height="430 mm" data-width="730 mm" data-weight="5 kg" data-power="">
+
+                <span class="best-seller-badge">
+                    <i class="fa-solid fa-trophy"></i>
+                    Best Seller
+                </span>
+
+                <i class="fa-regular fa-heart heart-icon"></i>
+
+                <img src="images/tv.png" class="maincard_image" alt="Smart TV Image">
+
                 <h1 class="product-name">LG 32" Smart LED TV</h1>
-                <p class="product-description">Smart entertainment. Stunning detail. Slim design.</p>
+
+                <p class="product-description">
+                    Smart entertainment. Stunning detail. Slim design.
+                </p>
+
                 <h3 class="product-cost">$340</h3>
+
                 <div class="card-buttons">
-                    <button class="more-btn" id="more">More</button>
-                    <button class="add-btn" id="addCart">Add to Cart</button>
+                    <button class="more-btn">More</button>
+                    <button class="add-btn">Add to Cart</button>
                 </div>
             </div>
 
-            <div class="main-card" id="kitchen">
+
+            <div class="main-card" data-id="9" data-name="Shivaki SMW 2120" data-price="339" data-oldprice="399"
+                data-save="60" data-image="images/microoven.png" data-category="Kitchen Appliance"
+                data-description="From quick snacks to full meals — ready in minutes." data-stock="60" data-star="4.4"
+                data-brand="images/Shivaki.png" data-height="300 mm" data-width="500 mm" data-weight="13 kg"
+                data-power="1000 W">
+
                 <p class="save-cost">Save $60</p>
-                <i class="fa-regular fa-heart heart-icon" id="heart"></i>
+
+                <i class="fa-regular fa-heart heart-icon"></i>
+
                 <img src="images/microoven.png" alt="Microoven Image" class="maincard_image">
+
                 <h1 class="product-name">Shivaki SMW 2120</h1>
-                <p class="product-description">From quick snacks to full meals — ready in minutes.</p>
-                <h3 class="product-cost"><span class="old-cost">$399</span> $339</h3>
+
+                <p class="product-description">
+                    From quick snacks to full meals — ready in minutes.
+                </p>
+
+                <h3 class="product-cost">
+                    <span class="old-cost">$399</span> $339
+                </h3>
+
                 <div class="card-buttons">
-                    <button class="more-btn" id="more">More</button>
-                    <button class="add-btn" id="addCart">Add to Card</button>
+                    <button class="more-btn">More</button>
+                    <button class="add-btn">Add to Cart</button>
                 </div>
             </div>
 
-            <div class="main-card" id="kitchen">
-                <i class="fa-regular fa-heart heart-icon" id="heart"></i>
-                <img src="images/dishwasher.png" class="maincard_image" alt="Fridge Image">
-                <h1 class="product-name">EdgeStar 18" Built-In </h1>
-                <p class="product-description">Compact design, sparkling clean</p>
+
+            <div class="main-card" data-id="7" data-name="EdgeStar 18 Built-In Dishwasher" data-price="580"
+                data-oldprice="" data-save="" data-image="images/dishwasher.png" data-category="Kitchen Appliance"
+                data-description="Compact design, sparkling clean." data-stock="5" data-star="4.5"
+                data-brand="images/EdgeStar.png" data-height="820 mm" data-width="450 mm" data-weight="40 kg"
+                data-power="1200 W">
+
+                <i class="fa-regular fa-heart heart-icon"></i>
+                <img src="images/dishwasher.png" class="maincard_image" alt="Dishwasher Image">
+                <h1 class="product-name">EdgeStar 18" Built-In</h1>
+                <p class="product-description">Compact design, sparkling clean.</p>
                 <h3 class="product-cost">$580</h3>
+
                 <div class="card-buttons">
-                    <button class="more-btn" id="more">More</button>
-                    <button class="add-btn" id="addCart">Add to Cart</button>
+                    <button class="more-btn">More</button>
+                    <button class="add-btn">Add to Cart</button>
                 </div>
             </div>
+
         </div>
 
     </section>
@@ -449,8 +581,8 @@
     <!-- /Footer section -->
 
     <!-- JavaScripts -->
-    <script src="JavaScripts/main.js"></script>
-    <script src="JavaScripts/productspage.js"></script>
+    <script type="module" src="JavaScripts/main.js"></script>
+    <!-- <script src="JavaScripts/productspage.js"></script> -->
 </body>
 
 </html>
