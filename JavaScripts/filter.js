@@ -3,7 +3,6 @@ export function initFilters() {
     const categoryList = document.getElementById("categoryFilter");
     const priceSelect = document.getElementById("priceFilter");
 
-    // Agar filter HTML yo‘q bo‘lsa — chiqib ket
     if (!cards.length || !categoryList || !priceSelect) {
         return;
     }

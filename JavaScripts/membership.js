@@ -1,21 +1,20 @@
+export function initLoyaltyButton() {
+    const loyaltyBtn = document.querySelector(".loyalty-btn");
+    const subscribeBtn = document.querySelector(".subscribe-btn");
 
-// Membership buttons
+    if (!loyaltyBtn) return;
 
-document.addEventListener("DOMContentLoaded", function () {
+    loyaltyBtn.style.cursor = "pointer";
 
-    const bronzeBtn = document.getElementById("bronze-btn");
-    const silverBTn = document.getElementById("silver-btn");
+    loyaltyBtn.addEventListener("click", () => {
+        window.location.href = "membership.html";
+    });
 
-    if (bronzeBtn) {
-        bronzeBtn.addEventListener("click", function () {
-            window.location.href = "productspage.html";
-        });
-    }
+    if (!subscribeBtn) return;
 
-    if (silverBTn) {
-        silverBTn.addEventListener("click", function () {
-            window.location.href = "contactus.html";
-        });
-    }
+    subscribeBtn.style.cursor = "pointer";
 
-});
+    subscribeBtn.addEventListener("click", () => {
+        window.location.href = "membership.html";
+    });
+}

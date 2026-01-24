@@ -16,7 +16,7 @@
 <body>
 
     <!-- Header section -->
-<div class="header-container" id="header-container">
+    <div class="header-container" id="header-container">
         <header>
             <div class="blacktop">
                 <h4 class="blacktop-phone_number">
@@ -99,7 +99,7 @@
                     <i class="fa-solid fa-list"></i>
                     <div class="dropdown-items">
                         <a href="cleaning.html" class="dropdown-item ">Cleaner</a>
-                        <a href="kitchen.html" class="dropdown-item">Kitchen</a>
+                        <a href="kitchen.html" class="dropdown-item active">Kitchen</a>
                         <a href="heatcool.html" class="dropdown-item">Heating and Cooling</a>
                         <a href="personal.html" class="dropdown-item">Personal</a>
                         <a href="smart.html" class="dropdown-item">Smart Home</a>
@@ -117,7 +117,7 @@
                     <a href="cleaning.html" class="nav-link">Cleaner</a>
                 </li>
                 <li class="nav-item">
-                    <a href="kitchen.html" class="nav-link">Kitchen</a>
+                    <a href="kitchen.html" class="nav-link active">Kitchen</a>
                 </li>
                 <li class="nav-item">
                     <a href="heatcool.html" class="nav-link">Heating and Cooling</a>
@@ -133,14 +133,19 @@
                 </li>
             </ul>
         </nav>
-    </div>    <!-- /Header section -->
+    </div> <!-- /Header section -->
 
     <!-- Product page -->
     <section class="maincards">
         <div class="cards-grid">
-            <div class="main-card">
+            <div class="main-card" data-id="200" data-name="Shivaki SMW 2120" data-price="339" data-oldprice="399"
+                data-save="60" data-image="images/microoven.png" data-category="Kitchen Appliance"
+                data-description="From quick snacks to full meals — ready in minutes." data-stock="15" data-star="4.4"
+                data-brand="images/Shivaki.png" data-height="300 mm" data-width="500 mm" data-weight="13 kg"
+                data-power="1000 W">
+
                 <p class="save-cost">Save $60</p>
-                <i class="fa-regular fa-heart heart-icon" id="heart"></i>
+                <i class="fa-regular fa-heart heart-icon"></i>
                 <img src="images/microoven.png" alt="Microoven Image" class="maincard_image">
                 <h1 class="product-name">Shivaki SMW 2120</h1>
                 <p class="product-description">From quick snacks to full meals — ready in minutes.</p>
@@ -150,43 +155,57 @@
                     <button class="add-btn">Add to Card</button>
                 </div>
             </div>
-            <div class="main-card">
+
+            <div class="main-card" data-id="201" data-name="Artel HD 341FN" data-price="520"
+                data-image="images/fridge.png" data-category="Kitchen Appliance"
+                data-description="Smart storage. Perfect fit." data-stock="20" data-star="4.7"
+                data-brand="images/Artel.png" data-height="1800 mm" data-width="700 mm" data-weight="65 kg"
+                data-power="150 W">
+
                 <span class="best-seller-badge">
                     <i class="fa-solid fa-trophy"></i>
                     Best Seller
                 </span>
-                <i class="fa-regular fa-heart heart-icon" id="heart"></i>
+                <i class="fa-regular fa-heart heart-icon"></i>
                 <img src="images/fridge.png" class="maincard_image" alt="Fridge Image">
                 <h1 class="product-name">Artel HD 341FN</h1>
-                <p class="product-description">
-                    Smart storage. Perfect fit.
-                </p>
+                <p class="product-description">Smart storage. Perfect fit.</p>
                 <h3 class="product-cost">$520</h3>
                 <div class="card-buttons">
                     <button class="more-btn">More</button>
                     <button class="add-btn">Add to Cart</button>
                 </div>
             </div>
-            <div class="main-card">
+
+            <div class="main-card" data-id="202" data-name='EdgeStar 18" Built-In' data-price="580"
+                data-image="images/dishwasher.png" data-category="Kitchen Appliance"
+                data-description="Compact design, sparkling clean." data-stock="10" data-star="4.5"
+                data-brand="images/EdgeStar.png" data-height="820 mm" data-width="450 mm" data-weight="38 kg"
+                data-power="1800 W">
+
                 <span class="best-seller-badge">
                     <i class="fa-solid fa-trophy"></i>
                     Best Seller
                 </span>
-                <i class="fa-regular fa-heart heart-icon" id="heart"></i>
+                <i class="fa-regular fa-heart heart-icon"></i>
                 <img src="images/dishwasher.png" class="maincard_image" alt="Fridge Image">
-                <h1 class="product-name">EdgeStar 18" Built-In </h1>
-                <p class="product-description">
-                    Compact design, sparkling clean
-                </p>
+                <h1 class="product-name">EdgeStar 18" Built-In</h1>
+                <p class="product-description">Compact design, sparkling clean</p>
                 <h3 class="product-cost">$580</h3>
                 <div class="card-buttons">
                     <button class="more-btn">More</button>
                     <button class="add-btn">Add to Cart</button>
                 </div>
             </div>
-            <div class="main-card">
+
+            <div class="main-card" data-id="203" data-name="Shivaki SMW 2120" data-price="339" data-oldprice="399"
+                data-save="60" data-image="images/microoven.png" data-category="Kitchen Appliance"
+                data-description="From quick snacks to full meals — ready in minutes." data-stock="15" data-star="4.4"
+                data-brand="images/Shivaki.png" data-height="300 mm" data-width="500 mm" data-weight="13 kg"
+                data-power="1000 W">
+
                 <p class="save-cost">Save $60</p>
-                <i class="fa-regular fa-heart heart-icon" id="heart"></i>
+                <i class="fa-regular fa-heart heart-icon"></i>
                 <img src="images/microoven.png" alt="Microoven Image" class="maincard_image">
                 <h1 class="product-name">Shivaki SMW 2120</h1>
                 <p class="product-description">From quick snacks to full meals — ready in minutes.</p>
@@ -196,86 +215,7 @@
                     <button class="add-btn">Add to Card</button>
                 </div>
             </div>
-            <div class="main-card">
-                <span class="best-seller-badge">
-                    <i class="fa-solid fa-trophy"></i>
-                    Best Seller
-                </span>
-                <i class="fa-regular fa-heart heart-icon" id="heart"></i>
-                <img src="images/fridge.png" class="maincard_image" alt="Fridge Image">
-                <h1 class="product-name">Artel HD 341FN</h1>
-                <p class="product-description">
-                    Smart storage. Perfect fit.
-                </p>
-                <h3 class="product-cost">$520</h3>
-                <div class="card-buttons">
-                    <button class="more-btn">More</button>
-                    <button class="add-btn">Add to Cart</button>
-                </div>
-            </div>
-            <div class="main-card">
-                <span class="best-seller-badge">
-                    <i class="fa-solid fa-trophy"></i>
-                    Best Seller
-                </span>
-                <i class="fa-regular fa-heart heart-icon" id="heart"></i>
-                <img src="images/dishwasher.png" class="maincard_image" alt="Fridge Image">
-                <h1 class="product-name">EdgeStar 18" Built-In </h1>
-                <p class="product-description">
-                    Compact design, sparkling clean
-                </p>
-                <h3 class="product-cost">$580</h3>
-                <div class="card-buttons">
-                    <button class="more-btn">More</button>
-                    <button class="add-btn">Add to Cart</button>
-                </div>
-            </div>
-            <div class="main-card">
-                <p class="save-cost">Save $60</p>
-                <i class="fa-regular fa-heart heart-icon" id="heart"></i>
-                <img src="images/microoven.png" alt="Microoven Image" class="maincard_image">
-                <h1 class="product-name">Shivaki SMW 2120</h1>
-                <p class="product-description">From quick snacks to full meals — ready in minutes.</p>
-                <h3 class="product-cost"><span class="old-cost">$399</span> $339</h3>
-                <div class="card-buttons">
-                    <button class="more-btn">More</button>
-                    <button class="add-btn">Add to Card</button>
-                </div>
-            </div>
-            <div class="main-card">
-                <span class="best-seller-badge">
-                    <i class="fa-solid fa-trophy"></i>
-                    Best Seller
-                </span>
-                <i class="fa-regular fa-heart heart-icon" id="heart"></i>
-                <img src="images/fridge.png" class="maincard_image" alt="Fridge Image">
-                <h1 class="product-name">Artel HD 341FN</h1>
-                <p class="product-description">
-                    Smart storage. Perfect fit.
-                </p>
-                <h3 class="product-cost">$520</h3>
-                <div class="card-buttons">
-                    <button class="more-btn">More</button>
-                    <button class="add-btn">Add to Cart</button>
-                </div>
-            </div>
-            <div class="main-card">
-                <span class="best-seller-badge">
-                    <i class="fa-solid fa-trophy"></i>
-                    Best Seller
-                </span>
-                <i class="fa-regular fa-heart heart-icon" id="heart"></i>
-                <img src="images/dishwasher.png" class="maincard_image" alt="Fridge Image">
-                <h1 class="product-name">EdgeStar 18" Built-In </h1>
-                <p class="product-description">
-                    Compact design, sparkling clean
-                </p>
-                <h3 class="product-cost">$580</h3>
-                <div class="card-buttons">
-                    <button class="more-btn">More</button>
-                    <button class="add-btn">Add to Cart</button>
-                </div>
-            </div>
+
         </div>
     </section>
     <!-- /Product page -->

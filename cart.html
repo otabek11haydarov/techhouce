@@ -35,16 +35,17 @@
             <!-- LEFT -->
             <div class="cart-left">
 
-                <!-- ❗ ITEMLAR SHU YERGA JS TOMONIDAN QO‘SHILADI -->
                 <div class="cart-items" id="cartItems"></div>
 
-                <div class="coupon">
-                    <h4>Have a coupon or promo code?</h4>
-                    <div class="coupon-box">
-                        <input type="text" placeholder="Coupon or Promo Code">
-                        <button>Apply</button>
+                <div class="promo-wrapper">
+                    <p class="promo-title">Have a coupon or promo code?</p>
+                    <div class="promo-box">
+                        <input type="text" id="promoInput" placeholder="Enter code">
+                        <button onclick="applyPromo()">Apply</button>
                     </div>
                 </div>
+
+                <div class="green-bar"></div>
 
             </div>
 
@@ -174,7 +175,19 @@
 
     <!-- JavaScripts -->
     <script type="module" src="JavaScripts/main.js"></script>
-    <!-- <script src="JavaScripts/cart.js"></script> -->
+    <script>
+        function applyPromo() {
+            const code = document.getElementById("promoInput").value.trim();
+
+            if (!code) {
+                alert("Please enter a promo code!");
+                return;
+            }
+
+            alert("Promo code applied: " + code);
+        }
+
+    </script>
 
 </body>
 
