@@ -114,7 +114,7 @@
 
 /* Desktop */
 
-@media (min-width: 1024px) {
+@media (min-width: 1400px) {
     .order-card {
         max-width: 520px;
         padding: 32px;
@@ -127,5 +127,9 @@
     .order-product {
         width: 80px;
         height: 80px;
+    }
+
+    .order-step {
+        font-size: 30px !important;
     }
 }

@@ -335,4 +335,8 @@ select {
         justify-content: space-between;
         align-items: center;
     }
+
+    .step {
+        font-size: 20px;
+    }
 }
